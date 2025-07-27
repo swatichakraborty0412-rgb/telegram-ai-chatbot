@@ -1,11 +1,12 @@
+
 services:
   - type: web
     name: telegram-ai-chatbot
-    runtime: python
-    buildCommand: ""
-    startCommand: python main.py
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot.py
     envVars:
       - key: OPENAI_API_KEY
-        fromEnvVar: OPENAI_API_KEY
+        fromSecret: OPENAI_API_KEY
       - key: TELEGRAM_BOT_TOKEN
-        fromEnvVar: TELEGRAM_BOT_TOKEN
+        fromSecret: TELEGRAM_BOT_TOKEN
