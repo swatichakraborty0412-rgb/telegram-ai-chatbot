@@ -1,10 +1,10 @@
 import os
-import openai
 import telebot
+import openai
 
-# Load keys from environment variables
-openai.api_key = os.getenv("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")
-bot = telebot.TeleBot(os.getenv("8100670858:AAFXWNxycdRZllTCpDp6PTs23fU20SvKhAo"))
+# Load API keys from environment variables
+openai.api_key = os.getenv("OPENAI_API_KEY")
+bot = telebot.TeleBot(os.getenv("BOT_TOKEN"))
 
 @bot.message_handler(func=lambda message: True)
 def ai_chat(message):
